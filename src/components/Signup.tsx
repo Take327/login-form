@@ -148,7 +148,6 @@ const Signup: React.FC = () => {
                         margin="normal"
                         onChange={handleChange}
                         onBlur={handleError}
-                        value={email}
                     />
                     <TextField
                         error={!state.passwordCheck}
@@ -160,7 +159,6 @@ const Signup: React.FC = () => {
                         margin="normal"
                         onChange={handleChange}
                         onBlur={handleError}
-
                     />
                     <TextField
                         error={!state.passwordconfirmCheck}
