@@ -29,7 +29,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         margin: `${theme.spacing(0)} auto`
     },
     card: {
-        marginTop: theme.spacing(10)
+        marginTop: theme.spacing(10),
+        width:400
+
     },
     header: {
         textAlign: "center",
@@ -116,13 +118,13 @@ const Signup: React.FC = () => {
     }
 
     const inputCheck = (state: State) => {
-        if(email !=='' && password !== '' && passwordconfirm !==''){
+        if (email !== '' && password !== '' && passwordconfirm !== '') {
             if (state.emailCheck && state.passwordCheck && state.passwordconfirmCheck) {
                 setIsButtonDisabled(false);
-            }else{
+            } else {
                 setIsButtonDisabled(true);
             }
-        }else{
+        } else {
             setIsButtonDisabled(true);
 
         }
@@ -171,7 +173,7 @@ const Signup: React.FC = () => {
                         onChange={handleChange}
                         onBlur={handleError}
                     />
-                    もしアカウントがあるなら <Link to="/login">LogIn</Link>
+                    <div>アカウントをお持ちの方は<Link to="/login">こちら</Link></div>
                 </CardContent>
                 <CardActions>
                     <Button variant="contained" color="primary" disabled={isButtonDisabled} fullWidth>Signup</Button>

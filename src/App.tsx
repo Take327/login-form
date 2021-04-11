@@ -20,13 +20,13 @@ function App() {
     <>
       {(() => {
         if (loginState) {
-          return <div>login中</div>
+          return <div>login中<button onClick={()=>changeLoginState(false)}>ログアウト</button></div>
         } else {
           return <div>logout中</div>
         }
       })()}
       <Router>
-        <Navi />
+        <Navi loginState={loginState}/>
         <Route exact path='/'><Home /></Route>
         <Route path='/signup' component={Signup} />
         <Route path='/login' render={() => <Login changeLoginState={changeLoginState} />} />
